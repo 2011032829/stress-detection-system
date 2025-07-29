@@ -1,0 +1,16 @@
+Age,Gender,Working_Hours_per_Week,Remote_Work,Stress_Level,Health_Issues,Sleep_Hours,Physical_Activity_Hours_per_Week,Mental_Health_Leave_Taken,Work_Pressure_Level,Annual_Leaves_Taken
+46,Female,54,Yes,7,None,9.0,3.5,Yes,10,12
+32,Female,81,No,7,Physical,7.9,8.4,No,7,13
+60,Female,79,No,6,Mental,4.1,6.4,Yes,2,15
+25,Male,63,Yes,8,Both,4.0,9.2,Yes,10,11
+36,Female,46,No,6,Mental,8.5,1.5,No,8,4
+28,Male,56,Yes,9,Physical,5.2,7.6,Yes,9,2
+28,Female,75,No,3,None,4.6,6.0,No,1,2
+41,Male,67,No,9,Mental,6.0,2.8,Yes,9,13
+53,Female,37,Yes,9,Both,8.0,7.2,No,6,1
+57,Female,68,Yes,0,None,8.7,9.8,Yes,4,7
+41,Female,52,Yes,8,Mental,5.8,9.3,Yes,7,11
+20,Male,63,No,10,Physical,7.0,4.7,Yes,8,4
+47,Male,78,No,2,None,5.6,9.6,Yes,1,22
+38,Female,67,Yes,9,Mental,4.4,7.1,No,9,25
+38,Female,78,Yes,10,Mental,2.8,4.1,Yes,10,12

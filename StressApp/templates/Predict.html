@@ -1,0 +1,160 @@
+{% load static %}
+<html>
+<head>
+<title>Stress Detection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please enter age");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please enter sleep hours");
+	formObj.t6.focus();
+	return false;
+	}
+	if(formObj.t7.value.length==0)
+	{
+	alert("Please enter activity hours");
+	formObj.t7.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+	
+</head>
+<style>
+body {
+  background-image: url("{% static 'images/back.jpg' %}");
+}
+</style>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><font size="" color="green">Proactive Stress Management Predicting Employee Strain for Preemptive Action</font><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+    <ul>      
+     
+	  <li><a href="{% url 'Predict' %}"><font size="3" color="black">Stress from Input</a></li>
+	  <li><a href="{% url 'PredictImage' %}"><font size="3" color="black">Stress from Image</a></li>
+	  <li><a href="{% url 'PredictVideo' %}"><font size="3" color="black">Stress from Video</a></li>
+		 <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</a></li>
+   </ul>    
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="1010" height="286" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'PredictAction' %} onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Stress Detection Page</b></h2>
+   
+	<center>{{ data|safe }}</center>
+						
+						<table align="center" width="30%" >
+
+		<tr><td><font size="3" color="black">Age</font></td><td><input type="number" name="t1" size="15"/></td></tr>
+
+			 
+		   <tr><td><font size='' color="black"><b>Gender</b></td><td><select name="t2">
+		   <option value="Male">Male</option>
+		   <option value="Female">Female</option>
+		   </select>
+		   </td></tr>
+
+		    <tr><td><font size='' color="black"><b>Working&nbsp;Hours&nbsp;Per&nbsp;Week</b></td><td><input type="number" name="t3" size="15"/></td></tr>
+
+			<tr><td><font size='' color="black"><b>Remote&nbsp;Work</b></td><td><select name="t4">
+			<option value="1">Yes</option>
+		   <option value="0">No</option>		   
+		   </select>
+			</td></tr>
+
+			<tr><td><font size='' color="black"><b>Health&nbsp;Issues</b></td><td><select name="t5">
+			<option value="Mental">Mental</option>
+		   <option value="Physical">Physical</option>
+		   <option value="Both">Both</option>
+		   <option value="None">None</option>
+		   </select>
+			</td></tr>
+
+			 <tr><td><font size='' color="black"><b>Sleep&nbsp;Hours</b></td><td><input type="text" name="t6" size="15"/></td></tr>
+
+			 <tr><td><font size='' color="black"><b>Physical&nbsp;Activity&nbsp;Hours&nbsp;Per&nbsp;Week</b></td><td><input type="text" name="t7" size="15"/></td></tr>
+
+			 <tr><td><font size='' color="black"><b>Mental&nbsp;Health&nbsp;Leave&nbsp;Taken</b></td><td><select name="t8">
+			<option value="1">Yes</option>
+		   <option value="0">No</option>		   
+		   </select>
+			</td></tr>
+
+			<tr><td><font size='' color="black"><b>Work&nbsp;Pressure&nbsp;Level</b></td><td><select name="t9">
+			<option value="0">0</option>
+		   <option value="1">1</option>
+		   <option value="2">2</option>
+		   <option value="3">3</option>
+		   <option value="4">4</option>
+		   <option value="5">5</option>
+		   <option value="6">6</option>
+		   <option value="7">7</option>
+		   <option value="8">8</option>
+		   <option value="9">9</option>
+		   <option value="10">10</option>
+		   </select>
+			</td></tr>
+
+			<tr><td><font size='' color="black"><b>Annual&nbsp;Leave&nbsp;Taken</td><td><select name="t10">
+			<option value="1">1</option>
+		   <option value="2">2</option>
+		   <option value="3">3</option>
+		   <option value="4">4</option>
+		   <option value="5">5</option>
+		   <option value="6">6</option>
+		   <option value="7">7</option>
+		   <option value="8">8</option>
+		   <option value="9">9</option>
+		   <option value="10">10</option>
+		   <option value="11">11</option>
+		   <option value="12">12</option>
+		   <option value="13">13</option>
+		   <option value="14">14</option>
+		   <option value="15">15</option>
+		   <option value="16">16</option>
+		   <option value="17">17</option>
+		   <option value="18">18</option>
+		   <option value="19">19</option>
+		   <option value="20">20</option>
+		   <option value="21">21</option>
+		   <option value="22">22</option>
+		    <option value="23">23</option>
+		   <option value="24">24</option>
+		   <option value="25">25</option>
+		   <option value="26">26</option>
+		   <option value="27">27</option>
+		   <option value="28">28</option>
+		   <option value="29">29</option>
+		   <option value="30">30</option>
+		   </select>
+			</td></tr>
+         
+		  
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>

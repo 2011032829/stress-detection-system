@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+<head>
+<title>Stress Detection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please upload test image");
+	formObj.t1.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+	
+</head>
+<style>
+body {
+  background-image: url("{% static 'images/back.jpg' %}");
+}
+</style>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><font size="" color="green">Proactive Stress Management Predicting Employee Strain for Preemptive Action</font><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+   <ul>      
+     
+	  <li><a href="{% url 'Predict' %}"><font size="3" color="black">Stress from Input</a></li>
+	  <li><a href="{% url 'PredictImage' %}"><font size="3" color="black">Stress from Image</a></li>
+	  <li><a href="{% url 'PredictVideo' %}"><font size="3" color="black">Stress from Video</a></li>
+		 <li><a href="{% url 'index' %}"><font size="3" color="black">Logout</a></li>
+   </ul>         
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="1010" height="286" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'PredictImageAction' %} enctype="multipart/form-data" onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Stress Detection from Images</b></h2>
+   
+	<font size="" color="red"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="30%" >
+			 
+		   <tr><td><font size='' color="black"><b>Upload&nbsp;Test&nbsp;Image</b></td><td><input type="file" name="t1" style="font-family: Comic Sans MS" size="20"/></td></tr>
+         
+		  
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>
